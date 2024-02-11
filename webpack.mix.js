@@ -1,19 +1,16 @@
 const mix = require('laravel-mix');
-const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 
-mix.js('resources/js/materialize.js', 'public/js')
-   .styles('resources/css/materialize.css', 'public/css/materialize.css') // Compilar archivos CSS en lugar de Sass
-   .webpackConfig({
-      plugins: [
-         new BrowserSyncPlugin({
-            proxy: 'smart-board.test',
-            files: [
-               'app/**/*.php',
-               'resources/views/**/*.php',
-               'public/**/*.(js|css)'
-            ],
-            open: false,
-            notify: false
-         })
-      ]
-   });
+/*
+ |--------------------------------------------------------------------------
+ | Mix Asset Management
+ |--------------------------------------------------------------------------
+ |
+ | Mix provides a clean, fluent API for defining some Webpack build steps
+ | for your Laravel application. By default, we are compiling the Sass
+ | file for the application as well as bundling up all the JS files.
+ |
+ */
+
+mix.js('resources/js/app.js', 'public/js')
+    .vue()
+    .sass('resources/sass/app.scss', 'public/css');
