@@ -26,6 +26,3 @@ Route::get('/paneles', function () {
     $postIts = PostIt::all();
     return view('paneles.index', compact('tasks', 'postIts'));
 });
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
