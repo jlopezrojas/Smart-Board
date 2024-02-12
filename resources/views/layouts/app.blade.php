@@ -14,6 +14,7 @@
 <body>
     <nav>
         <ul>
+            {{-- <a class="waves-effect waves-light btn" href="{{ url('/home') }}">{{ config('app.name', 'Laravel') }}</a> --}}
             <a class="waves-effect waves-light btn" href="{{ route('post-its.index') }}">Post-It</a>
             <a class="waves-effect waves-light btn" href="{{ route('tasks.index') }}">Tareas</a>
         </ul>
