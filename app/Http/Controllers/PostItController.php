@@ -25,10 +25,9 @@ class PostItController extends Controller
             'content' => 'required',
         ]);
 
-        PostIt::create($request->all());
+        $postIt = PostIt::create($request->all());
 
-        return redirect()->route('post-its.index')
-            ->with('success', 'Post-It creado exitosamente.');
+        return response()->json($postIt);
     }
 
     public function show(PostIt $postIt)
